@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lee Yao — AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14181d;
+    --slate:#3a424c;
+    --muted:#5d6670;
+    --accent:#2e5c8a;
+    --accent-deep:#234763;
+    --rule:#d8dee4;
+    --rule-soft:#e7ebef;
+    --panel:#f5f7f9;
+    --page:#ffffff;
+    --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:#e9edf1;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:14px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .page{
+    max-width:840px;
+    margin:32px auto;
+    background:var(--page);
+    padding:52px 56px 56px;
+    box-shadow:0 1px 3px rgba(20,24,29,.08),0 12px 32px rgba(20,24,29,.10);
+  }
+
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px;}
+
+  /* ---------- Header ---------- */
+  header{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:18px;
+    margin-bottom:22px;
+  }
+  .name{
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:-.015em;
+    line-height:1.05;
+    margin:0;
+  }
+  .role-line{
+    font-family:var(--mono);
+    font-size:11.5px;
+    font-weight:500;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-top:9px;
+  }
+  .contact{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:13px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 0;
+  }
+  .contact span.sep{color:var(--rule);padding:0 9px;}
+  .contact a{color:var(--slate);}
+  .contact a:hover{color:var(--accent);}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:24px;}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:14px;
+  }
+  .sec-head h2{
+    font-family:var(--mono);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    margin:0;
+    white-space:nowrap;
+  }
+  .sec-head .line{
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+
+  .summary{
+    font-size:14.5px;
+    line-height:1.62;
+    color:var(--slate);
+    margin:0;
+  }
+  .summary strong{color:var(--ink);font-weight:600;}
+
+  /* ---------- Skills ---------- */
+  .skills{
+    display:grid;
+    grid-template-columns:max-content 1fr;
+    gap:9px 20px;
+    align-items:baseline;
+  }
+  .skills dt{
+    font-family:var(--mono);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--accent);
+    white-space:nowrap;
+  }
+  .skills dd{
+    margin:0;
+    color:var(--slate);
+    font-size:13.5px;
+  }
+  .skills dd b{color:var(--ink);font-weight:600;}
+
+  /* ---------- Entries ---------- */
+  .entry{margin-bottom:18px;}
+  .entry:last-child{margin-bottom:0;}
+  .entry-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+  }
+  .entry-title{
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+  }
+  .entry-org{font-weight:600;color:var(--accent-deep);}
+  .entry-role{color:var(--slate);font-weight:500;}
+  .entry-date{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    white-space:nowrap;
+    letter-spacing:.02em;
+  }
+  .entry-sub{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    margin-top:1px;
+  }
+  .entry-meta{
+    font-size:12.5px;
+    color:var(--muted);
+    font-style:italic;
+  }
+  .stack{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--accent);
+    margin-top:4px;
+    letter-spacing:.01em;
+  }
+  ul.bullets{
+    margin:8px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  ul.bullets li{
+    position:relative;
+    padding-left:16px;
+    margin-bottom:4px;
+    color:var(--slate);
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  ul.bullets li::before{
+    content:"";
+    position:absolute;
+    left:1px;
+    top:8px;
+    width:4px;
+    height:4px;
+    background:var(--accent);
+    border-radius:1px;
+  }
+  ul.bullets li b{color:var(--ink);font-weight:600;}
+  .links-inline{font-family:var(--mono);font-size:11px;}
+
+  /* ---------- Education / Credential ---------- */
+  .flat{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:6px;
+  }
+  .flat .label{font-size:14px;color:var(--ink);}
+  .flat .label b{font-weight:600;}
+  .flat .label .deg{color:var(--slate);}
+  .flat .meta{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    @page{ size:Letter; margin:0.5in; }
+    body{background:#fff;font-size:10.5pt;}
+    .page{
+      max-width:none;margin:0;padding:0;
+      box-shadow:none;width:auto;
+    }
+    a{color:var(--accent-deep);}
+    .entry,.skills,.flat{break-inside:avoid;}
+    section{break-inside:avoid-page;}
+    header{break-after:avoid;}
+  }
+
+  @media (max-width:640px){
+    .page{padding:30px 22px;margin:0;}
+    .name{font-size:27px;}
+    .skills{grid-template-columns:1fr;gap:2px 0;}
+    .skills dt{margin-top:8px;}
+    .entry-head,.entry-sub,.flat{flex-direction:column;gap:2px;}
+    .entry-date{font-size:10.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1 class="name">Lee Yao</h1>
+    <div class="role-line">AI Engineer · Data Infrastructure &amp; GenAI</div>
+    <div class="contact">
+      <span>Queens, NY, USA</span><span class="sep">/</span>
+      <span>(347) 749-3598</span><span class="sep">/</span>
+      <a href="mailto:LeeYao.us@gmail.com">LeeYao.us@gmail.com</a><span class="sep">/</span>
+      <a href="https://www.linkedin.com/in/leeyaodatafan/">linkedin.com/in/leeyaodatafan</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><h2>Summary</h2><span class="line"></span></div>
+    <p class="summary">
+      AI Engineer who builds the data infrastructure behind production AI systems — from cloud ingestion and pipeline orchestration through LLM-powered applications. <strong>Founding AI Engineer at Solvia One</strong>, owning the full stack end to end: frontend, backend, databases, infrastructure, and the LLM and automation layer. Hands-on with <strong>OpenAI orchestration</strong>, retrieval over SQL / graph / vector stores, and workflow automation (<strong>n8n, ComfyUI</strong>), on a strong data-engineering foundation in <strong>Airflow, dbt, Snowflake, and AWS S3</strong>. Ships end-to-end ELT pipelines, Kimball dimensional models, and AI-ready data layers, with a track record of measurable analytical outcomes.
+    </p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Skills</h2><span class="line"></span></div>
+    <dl class="skills">
+      <dt>AI &amp; GenAI</dt>
+      <dd><b>LLM Orchestration (OpenAI API)</b> · Retrieval-Augmented Generation (RAG) · Embeddings &amp; Vector Search · Prompt &amp; Tool-Calling Design · Snowflake Cortex LLM · Workflow Automation (n8n) · ComfyUI Pipelines</dd>
+
+      <dt>Data Engineering</dt>
+      <dd>ELT / ETL Pipelines · Orchestration (Airflow, Prefect) · Transformation (dbt) · Data Modeling · Cloud Ingestion (AWS S3)</dd>
+
+      <dt>Warehousing</dt>
+      <dd>Dimensional Modeling · Kimball Star Schema · Surrogate Keys · Data Marts</dd>
+
+      <dt>Databases</dt>
+      <dd>PostgreSQL · Snowflake · Neo4j (Graph) · Vector Databases</dd>
+
+      <dt>Programming</dt>
+      <dd>SQL · Python (Pandas, Matplotlib)</dd>
+
+      <dt>Full-Stack</dt>
+      <dd>End-to-end web application development — frontend, backend, APIs, and deployment</dd>
+
+      <dt>BI &amp; Analytics</dt>
+      <dd>Power BI · Qlik Sense</dd>
+
+      <dt>Tooling</dt>
+      <dd>Docker · Git / GitHub · Power Automate · Power Apps · Excel</dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Experience</h2><span class="line"></span></div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title"><span class="entry-org">Solvia One LLC</span> — <span class="entry-role">Founding AI Engineer</span></p>
+        <span class="entry-date">May 2025 – Present</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-meta">Full-time · <a href="http://www.solvia-one.com/">solvia-one.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>As founding engineer, designed and built the company's entire product platform <b>end to end</b> — frontend, backend, databases, hosting/infrastructure, and the LLM and automation layer powering its AI features.</li>
+        <li>Built core AI capabilities on <b>OpenAI model orchestration</b>, designing prompt and tool-calling workflows that turn user input into automated, multi-step actions.</li>
+        <li>Engineered automation pipelines in <b>n8n</b> to connect services and trigger AI-driven workflows, and built generative-media pipelines with <b>ComfyUI</b>.</li>
+        <li>Designed a polyglot data layer across <b>relational (SQL), graph, and vector databases</b> to support retrieval-augmented generation and semantic search over structured and unstructured content.</li>
+        <li>Owned the full lifecycle as sole engineer — architecture, implementation, and deployment of the live production site.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title"><span class="entry-org">Freelance / Independent</span> — <span class="entry-role">Data Engineering &amp; Analytics</span></p>
+        <span class="entry-date">Jun 2024 – Present</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-meta">Queens, NY</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed and delivered <b>3 end-to-end data engineering pipelines</b> on real-world datasets (NYC Taxi, Olist e-commerce, US DOT flights), spanning cloud ingestion (AWS S3), warehouse modeling (Snowflake, PostgreSQL), transformation (dbt), orchestration (Airflow, Prefect), and BI reporting (Power BI).</li>
+        <li>Built Kimball dimensional models and automated dbt data-quality tests across staging / core / mart layers; orchestrated parameterized, idempotent DAGs supporting monthly backfills with no manual intervention.</li>
+        <li>Applied <b>Snowflake Cortex LLM</b> for multilingual sentiment analysis on 100K+ records and <b>Neo4j</b> graph modeling for fraud-cluster detection.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title"><span class="entry-org">SDG Group USA</span> — <span class="entry-role">Data Analyst</span></p>
+        <span class="entry-date">Dec 2022 – May 2024</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-meta">Bedminster, NJ</span>
+      </div>
+      <ul class="bullets">
+        <li>Developed and maintained <b>Qlik Sense and Power BI</b> dashboards for client reporting, operational monitoring, and decision-making.</li>
+        <li>Performed data cleaning, validation, and reconciliation to improve accuracy and consistency across reporting views.</li>
+        <li>Supported a BI improvement initiative for an airport-retail client — prepared reporting-ready datasets in Snowflake and resolved data-consistency issues feeding Power BI.</li>
+        <li>Led a reporting migration for a pharmaceutical client: rebuilt Qlik Cloud reports in Power BI and automated daily distribution to stakeholders via Power Automate.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title"><span class="entry-org">AMN Healthcare</span> — <span class="entry-role">Medical Interpreter (Part-Time)</span></p>
+        <span class="entry-date">Sep 2025 – Present</span>
+      </div>
+      <div class="entry-sub">
+        <span class="entry-meta">Queens, NY</span>
+      </div>
+      <ul class="bullets">
+        <li>Provide real-time interpretation services in medical and business settings.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>AI &amp; Data Engineering Projects</h2><span class="line"></span></div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title">Olist Supply Chain &amp; AI Reviews Intelligence</p>
+        <span class="entry-date">Mar 2026 – Apr 2026</span>
+      </div>
+      <div class="stack">Python · Prefect · Docker · AWS S3 · Snowflake · Cortex LLM · dbt · Neo4j · Power BI</div>
+      <ul class="bullets">
+        <li>Built an automated ELT pipeline (Python, Prefect, Docker) ingesting <b>100K+</b> e-commerce reviews and transactions from AWS S3 into Snowflake at <b>99.9% reliability</b>.</li>
+        <li>Engineered multilingual (Portuguese) sentiment analysis in Snowflake using <b>Cortex LLM</b> with SQL-based fallback logic for consistent large-scale processing.</li>
+        <li>Applied <b>Neo4j graph modeling</b> to surface suspicious review patterns and detect fraud clusters among sellers.</li>
+        <li>Designed a Kimball star schema in dbt with automated data-quality tests; built an executive Power BI dashboard showing the bottom 3% of sellers drove <b>40%+</b> of negative sentiment.</li>
+        <li>Linked logistics SLA breaches across 5 regions to a 3.5-point satisfaction drop, enabling targeted interventions.</li>
+      </ul>
+      <div class="links-inline"><a href="https://github.com/jonathanlyao/Olist-E-Commerce-Supply-Chain-AI-Reviews-Intelligence">GitHub ↗</a></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title">US DOT Flights Orchestrated Data Pipeline</p>
+        <span class="entry-date">Apr 2026 – Present</span>
+      </div>
+      <div class="stack">Apache Airflow · Docker Compose · Python · AWS S3 · Snowflake · dbt</div>
+      <ul class="bullets">
+        <li>Engineered an end-to-end <b>monthly pipeline</b> (Dockerized Airflow, Python, AWS S3, Snowflake) ingesting and transforming US DOT (BTS) flight data from raw download to analytics-ready marts.</li>
+        <li>Orchestrated parameterized DAGs — download, GZIP, S3 upload, Snowflake <code>COPY INTO</code>, dbt run/test — with <b>idempotency checks</b> at every stage for safe monthly backfills.</li>
+        <li>Established a Snowflake external stage via S3 Storage Integration (IAM trust chain) for serverless loading into raw / staging / core / mart layers.</li>
+        <li>Modeled dbt fact/dim tables (<code>fact_flights</code>, <code>dim_carrier</code>, <code>dim_airport</code>, <code>dim_date</code> with dynamic date spine) using MD5 surrogate keys for join-efficient dimensional modeling.</li>
+        <li>Containerized the full Airflow stack (webserver, scheduler, metadata DB) with Docker Compose for a reproducible, zero-conflict environment.</li>
+      </ul>
+      <div class="links-inline"><a href="https://github.com/jonathanlyao/US-DOT-Flights-End-to-End-Data-Engineering-Pipeline">GitHub ↗</a></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <p class="entry-title">NYC Taxi Analytics Engineering Pipeline</p>
+        <span class="entry-date">Dec 2025 – Mar 2026</span>
+      </div>
+      <div class="stack">PostgreSQL · dbt · Docker · Power BI</div>
+      <ul class="bullets">
+        <li>Built an end-to-end ELT pipeline transforming raw NYC Taxi trip data into analytics-ready reporting tables.</li>
+        <li>Designed layered models across raw / staging / core / mart schemas; implemented data-quality validation for anomalies like unrealistic trip speeds and invalid timestamps.</li>
+        <li>Created daily aggregated marts (trip volume, revenue, duration) and Power BI dashboards for demand, revenue, and airport-traffic analysis.</li>
+        <li>Containerized the dev environment with Docker for a reproducible local warehouse.</li>
+      </ul>
+      <div class="links-inline"><a href="https://github.com/jonathanlyao/NYC-Yellow-Taxi-Q1-2019_Analytics/tree/main">GitHub ↗</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Education</h2><span class="line"></span></div>
+    <div class="flat">
+      <span class="label"><b>Stony Brook University</b> <span class="deg">— B.S., Electrical Engineering</span></span>
+      <span class="meta">Stony Brook, NY · May 2008</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Certification</h2><span class="line"></span></div>
+    <div class="flat">
+      <span class="label"><a href="https://learn.microsoft.com/api/credentials/share/en-us/LeeYao-0069/B073B9E0F298FD6A?sharingId=AD929D52BA42BB13"><b>Microsoft Certified: Power BI Data Analyst Associate</b></a></span>
+      <span class="meta">Expires Jul 2026</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
