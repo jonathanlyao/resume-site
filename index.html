@@ -371,7 +371,7 @@
   <section>
     <div class="sec-head"><h2>Summary</h2><span class="line"></span></div>
     <p class="summary">
-      Data Engineer with experience building cloud-native data platforms, analytics pipelines, and AI-enabled data solutions. Skilled in designing end-to-end ELT workflows using <strong> Python, Airflow, dbt, Snowflake, AWS, Spark,</strong> and <strong>Kafka</strong>. Experienced in dimensional modeling, data quality frameworks, and integrating LLM-powered analytics into modern data platforms. Designed and implemented data platforms for healthcare, financial, e-commerce, and transportation domains using real-world datasets and production-inspired architectures.
+      Data Engineer with experience building cloud-native data platforms, analytics pipelines, and AI-enabled data solutions. Skilled in designing end-to-end ELT workflows using <strong> Python, Airflow, dbt, Snowflake, AWS, Spark,</strong> and <strong>Kafka</strong>. Experienced in dimensional modeling, data quality frameworks, and integrating LLM-powered analytics into modern data platforms. Designed and implemented data platforms for healthcare, financial, e-commerce, and transportation domains using real-world datasets and production-grade architectures.
     </p>
   </section>
 
@@ -400,7 +400,7 @@
       <dd>Docker · Git / GitHub · Power Automate · Power Apps · Excel</dd>
 
       <dt>AI & Analytics</dt>
-      <dd>Snowflake Cortex · OpenAI API · LLM-powered Analytics · Prompt Engineering</dd>
+      <dd>Snowflake Cortex · OpenAI API · LLM-powered Analytics</dd>
     </dl>
   </section>
 
@@ -416,7 +416,8 @@
         <span class="entry-meta">Full-time</span>
       </div>
       <ul class="bullets">
-        <li>Designed and deployed the company's website, data infrastructure, and operational automation systems supporting a growing e-commerce business.
+        <li>
+        Built data infrastructure and operational automation systems supporting a growing e-commerce business.
         </li>
         <li>
         Built cloud-based data workflows and reporting processes supporting product management, customer analytics, and business operations.
@@ -425,7 +426,7 @@
         Integrated LLM-powered content generation and workflow automation using OpenAI APIs and modern automation tools to improve operational efficiency.
         </li>
         <li>
-        Owned technical architecture, implementation, deployment, and platform maintenance as the primary technical contributor.
+        Served as the primary technical contributor, designing and maintaining the company's data infrastructure, automation workflows, and cloud-based operational systems.
         </li>
 
         </ul>
@@ -440,9 +441,12 @@
         <span class="entry-meta">Queens, NY</span>
       </div>
       <ul class="bullets">
-        <li>Designed and delivered <b>end-to-end data engineering pipelines</b> on real-world datasets (NYC Taxi, Olist e-commerce, US DOT flights &amp; CMS Medicare), spanning cloud ingestion (AWS S3), warehouse modeling (Snowflake, PostgreSQL), transformation (dbt), orchestration (Airflow, Prefect), and BI reporting (Power BI).</li>
-        <li>Built Kimball dimensional models and automated dbt data-quality tests across staging / core / mart layers; orchestrated parameterized, idempotent DAGs supporting monthly backfills with no manual intervention.</li>
-        <li>Applied <b>Snowflake Cortex LLM</b> for multilingual sentiment analysis on 100K+ records and <b>Neo4j</b> graph modeling for fraud-cluster detection.</li>
+        <li>Built <b>end-to-end data engineering pipelines</b> across healthcare, e-commerce, and transportation domains, covering cloud ingestion (AWS S3), warehouse modeling (Snowflake, PostgreSQL), transformation (dbt), and orchestration (Airflow, Prefect).</li>
+        <li>
+        Implemented Kimball dimensional models and automated dbt data-quality testing across raw, staging, core, and mart layers, enabling reliable analytics-ready datasets and parameterized pipeline execution.
+        </li>
+        <li>Applied <b>Snowflake Cortex LLM</b> for multilingual sentiment analysis on 100K+ records and <b>Neo4j</b> graph modeling for fraud cluster clusters and anomalous seller behavior.
+        </li>
       </ul>
     </div>
 
@@ -456,7 +460,7 @@
       </div>
       <ul class="bullets">
         <li>Developed and maintained <b>Qlik Sense and Power BI</b> dashboards for client reporting, operational monitoring, and decision-making.</li>
-        <li>Performed data cleaning, validation, and reconciliation to improve accuracy and consistency across reporting views.</li>
+        <li>Investigated and resolved upstream data-quality and consistency issues, improving the reliability of Snowflake-powered reporting datasets feeding Power BI and Qlik Sense dashboards.</li>
         <li>Supported a BI improvement initiative for an airport-retail client — prepared reporting-ready datasets in Snowflake and resolved data-consistency issues feeding Power BI.</li>
         <li>Led a reporting migration for a pharmaceutical client: rebuilt Qlik Cloud reports in Power BI and automated daily distribution to stakeholders via Power Automate.</li>
       </ul>
@@ -505,13 +509,10 @@ Kafka · Spark · Airflow · AWS S3 · Snowflake
 Built a healthcare data pipeline processing CMS Medicare datasets using <b>Kafka</b> for ingestion, <b>Spark</b> for distributed transformation, and <b>Airflow</b> for orchestration.
 </li>
 <li>
-Designed scalable ingestion and transformation workflows supporting large-volume healthcare datasets and automated scheduling.
+Designed ingestion and transformation workflows integrating <b>Kafka</b>, <b>Spark</b>, <b>Snowflake</b>, and <b>Airflow</b> to automate healthcare data processing and scheduling.
 </li>
 <li>
 Implemented data quality validation and dimensional modeling to prepare analytics-ready datasets for downstream reporting.
-</li>
-<li>
-Demonstrated modern data platform architecture combining streaming ingestion, distributed processing, orchestration, and cloud storage.
 </li>
 
 </ul>
@@ -530,7 +531,7 @@ GitHub ↗
       </div>
       <div class="stack">Python · Prefect · Docker · AWS S3 · Snowflake · Cortex LLM · dbt · Neo4j · Power BI</div>
       <ul class="bullets">
-        <li>Built an automated ELT pipeline (Python, Prefect, Docker) ingesting <b>100K+</b> e-commerce reviews and transactions from AWS S3 into Snowflake at <b>99.9% reliability</b>.</li>
+        <li>Built an automated ELT pipeline (Python, Prefect, Docker) ingesting <b>100K+</b> e-commerce reviews and transactions from AWS S3 into Snowflake.</li>
         <li>Engineered multilingual (Portuguese) sentiment analysis in Snowflake using <b>Cortex LLM</b> with SQL-based fallback logic for consistent large-scale processing.</li>
         <li>Applied <b>Neo4j graph modeling</b> to surface suspicious review patterns and detect fraud clusters among sellers.</li>
         <li>Designed a Kimball star schema in dbt with automated data-quality tests; built an executive Power BI dashboard showing the bottom 3% of sellers drove <b>40%+</b> of negative sentiment.</li>
@@ -551,7 +552,7 @@ GitHub ↗
         <li>Orchestrated parameterized DAGs — download, GZIP, S3 upload, Snowflake <code>COPY INTO</code>, dbt run/test — with <b>idempotency checks</b> at every stage for safe monthly backfills.</li>
         <li>Established a Snowflake external stage via S3 Storage Integration (IAM trust chain) for serverless loading into raw / staging / core / mart layers.</li>
         <li>Modeled dbt fact/dim tables (<code>fact_flights</code>, <code>dim_carrier</code>, <code>dim_airport</code>, <code>dim_date</code> with dynamic date spine) using MD5 surrogate keys for join-efficient dimensional modeling.</li>
-        <li>Containerized the full Airflow stack (webserver, scheduler, metadata DB) with Docker Compose for a reproducible, zero-conflict environment.</li>
+        <li>Containerized the full Airflow stack (webserver, scheduler, metadata DB) with Docker Compose for a reproducible, isolated environment.</li>
       </ul>
       <div class="links-inline"><a href="https://github.com/jonathanlyao/US-DOT-Flights-End-to-End-Data-Engineering-Pipeline">GitHub ↗</a></div>
     </div>
@@ -565,8 +566,11 @@ GitHub ↗
       <ul class="bullets">
         <li>Built an end-to-end ELT pipeline transforming raw NYC Taxi trip data into analytics-ready reporting tables.</li>
         <li>Designed layered models across raw / staging / core / mart schemas; implemented data-quality validation for anomalies like unrealistic trip speeds and invalid timestamps.</li>
-        <li>Created daily aggregated marts (trip volume, revenue, duration) and Power BI dashboards for demand, revenue, and airport-traffic analysis.</li>
-        <li>Containerized the dev environment with Docker for a reproducible local warehouse.</li>
+        <li>
+        Created daily aggregated marts (trip volume, revenue, duration) and Power BI dashboards for demand, revenue, and airport-traffic analysis.
+        </li>
+        <li>
+        Built a Dockerized PostgreSQL + dbt development environment for reproducible analytics engineering workflows.</li>
       </ul>
       <div class="links-inline"><a href="https://github.com/jonathanlyao/NYC-Yellow-Taxi-Q1-2019_Analytics/tree/main">GitHub ↗</a></div>
     </div>
